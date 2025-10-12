@@ -47,47 +47,7 @@ function MainPage() {
           </div>
           <div className="hero-visual">
             <div className="hero-image">
-              {/* 실제 이미지를 사용하려면 아래 img 태그의 주석을 해제하고 src에 이미지 경로를 입력하세요 */}
-              {/* <img src="/images/hero-main.jpg" alt="사장님과 손님이 함께 웃으며 대화하는 따뜻한 장면" className="hero-main-image" /> */}
-
-              {/* 임시 플레이스홀더 */}
-              <div className="image-placeholder">
-                <div className="placeholder-scene">
-                  {/* 배경 - 카페/식당 분위기 */}
-                  <div className="scene-background">
-                    <div className="window-light"></div>
-                    <div className="window-light"></div>
-                  </div>
-
-                  {/* 사장님 (왼쪽, 앞치마) */}
-                  <div className="character owner">
-                    <div className="char-head"></div>
-                    <div className="char-body">
-                      <div className="apron"></div>
-                    </div>
-                    <div className="char-arm left"></div>
-                    <div className="char-arm right"></div>
-                  </div>
-
-                  {/* 손님 (오른쪽) */}
-                  <div className="character customer">
-                    <div className="char-head"></div>
-                    <div className="char-body"></div>
-                    <div className="char-arm left"></div>
-                    <div className="char-arm right"></div>
-                  </div>
-
-                  {/* 스파클/하트 이펙트 */}
-                  <div className="sparkle sparkle-1">✨</div>
-                  <div className="sparkle sparkle-2">💙</div>
-                  <div className="sparkle sparkle-3">✨</div>
-                </div>
-
-                <div className="image-caption">
-                  <span className="caption-main">사장님과 손님이 함께 웃으며 대화하는 따뜻한 장면</span>
-                  <span className="caption-sub">📸 실제 이미지는 /src/pages/MainPage.jsx 파일에서 교체 가능</span>
-                </div>
-              </div>
+              <img src="/hero-image.png" alt="사장님과 손님이 함께 악수하는 따뜻한 장면" className="hero-main-image" />
             </div>
           </div>
         </div>
