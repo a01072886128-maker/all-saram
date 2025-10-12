@@ -1,0 +1,424 @@
+.customer-dashboard {
+  min-height: 100vh;
+  background: #F8F9FA;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 70px;
+}
+
+/* 상단바 */
+.customer-header {
+  background: white;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.customer-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #2B66F6;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.customer-logo:hover {
+  color: #4A80F7;
+  transform: scale(1.02);
+}
+
+.location-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  background: #2B66F6;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(43, 102, 246, 0.2);
+}
+
+.location-button:hover {
+  background: #1E4FD9;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(43, 102, 246, 0.3);
+}
+
+.location-icon {
+  font-size: 14px;
+}
+
+.location-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+}
+
+.location-arrow {
+  font-size: 10px;
+  color: white;
+  opacity: 0.8;
+}
+
+.profile-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #F8F9FA;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.profile-button:hover {
+  background: #E9ECEF;
+  transform: scale(1.05);
+}
+
+.profile-icon {
+  font-size: 20px;
+}
+
+/* 메인 컨텐츠 */
+.customer-main {
+  flex: 1;
+  padding: 32px 24px;
+  overflow-y: auto;
+}
+
+.customer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 인사말 섹션 */
+.greeting-section {
+  padding: 32px 0 48px 0;
+  margin-bottom: 48px;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.greeting-main {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2D3436;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.greeting-sub {
+  font-size: 16px;
+  color: #636E72;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* 대시보드 그리드 */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 대시보드 카드 */
+.dashboard-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--card-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* 카드 아이콘 */
+.card-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: var(--card-color);
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover .card-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.card-icon {
+  font-size: 40px;
+  filter: brightness(1) contrast(1.15);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 카드 컨텐츠 */
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2D3436;
+  margin: 0;
+}
+
+.card-subtitle {
+  font-size: 15px;
+  color: #636E72;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* 카드 푸터 */
+.card-footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #E9ECEF;
+}
+
+.card-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--card-color);
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover .card-link {
+  transform: translateX(4px);
+  display: inline-block;
+}
+
+/* 하단 탭바 */
+.bottom-tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 8px 16px 8px;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.3s ease;
+  color: #95A5A6;
+}
+
+.tab-item.active {
+  color: #2B66F6;
+}
+
+.tab-item.special .tab-icon {
+  color: #FF6B3D;
+}
+
+.tab-item:hover {
+  transform: translateY(-2px);
+}
+
+.tab-icon {
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.tab-item.active .tab-icon {
+  transform: scale(1.15);
+}
+
+.tab-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-header {
+    padding: 16px 20px;
+  }
+
+  .customer-logo {
+    font-size: 20px;
+  }
+
+  .location-button {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+
+  .location-icon {
+    font-size: 13px;
+  }
+
+  .location-text {
+    font-size: 13px;
+  }
+
+  .location-arrow {
+    font-size: 9px;
+  }
+
+  .customer-main {
+    padding: 24px 20px;
+  }
+
+  .greeting-section {
+    padding: 24px 0 36px 0;
+    margin-bottom: 36px;
+  }
+
+  .greeting-main {
+    font-size: 24px;
+  }
+
+  .greeting-sub {
+    font-size: 15px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .dashboard-card {
+    padding: 24px;
+    min-height: 200px;
+  }
+
+  .card-icon-wrapper {
+    width: 54px;
+    height: 54px;
+  }
+
+  .card-icon {
+    font-size: 36px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+  }
+
+  .bottom-tabbar {
+    padding: 10px 8px 14px 8px;
+  }
+
+  .tab-icon {
+    font-size: 20px;
+  }
+
+  .tab-label {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .greeting-section {
+    padding: 20px 0 32px 0;
+    margin-bottom: 32px;
+  }
+
+  .greeting-main {
+    font-size: 22px;
+  }
+
+  .greeting-sub {
+    font-size: 14px;
+  }
+
+  .dashboard-card {
+    padding: 20px;
+  }
+}

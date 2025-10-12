@@ -1,0 +1,247 @@
+.signup-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #F0F5FF 0%, #FFFFFF 50%, #FFF5F0 100%);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.signup-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #636E72;
+  cursor: pointer;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #2B66F6;
+}
+
+.signup-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.signup-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2D3436;
+  margin-bottom: 15px;
+}
+
+.signup-description {
+  font-size: 18px;
+  color: #636E72;
+  font-weight: 400;
+}
+
+.user-type-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.user-type-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #2B66F6, #4A80F7);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.user-type-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.user-type-card:hover::before {
+  transform: scaleX(1);
+}
+
+.owner-card {
+  border: 2px solid transparent;
+}
+
+.owner-card:hover {
+  border-color: #FF6B3D;
+}
+
+.customer-card {
+  border: 2px solid transparent;
+}
+
+.customer-card:hover {
+  border-color: #2B66F6;
+}
+
+.card-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F0F5FF 0%, #E8F0FE 100%);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.owner-card .card-icon {
+  background: linear-gradient(135deg, #FFF5F0 0%, #FFE9E0 100%);
+}
+
+.customer-card .card-icon {
+  background: linear-gradient(135deg, #F0F5FF 0%, #E8F0FE 100%);
+}
+
+.card-icon svg {
+  color: #FF6B3D;
+}
+
+.customer-card .card-icon svg {
+  color: #2B66F6;
+}
+
+.user-type-card:hover .card-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.card-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #2D3436;
+  margin-bottom: 15px;
+}
+
+.card-description {
+  font-size: 16px;
+  color: #636E72;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  text-align: left;
+}
+
+.card-features li {
+  font-size: 15px;
+  color: #2D3436;
+  padding: 8px 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-features li svg {
+  color: #FF6B3D;
+  flex-shrink: 0;
+}
+
+.customer-card .card-features li svg {
+  color: #2B66F6;
+}
+
+.card-button {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #FF6B3D 0%, #FF8C61 100%);
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.owner-card:hover .card-button {
+  background: linear-gradient(135deg, #FF8C61 0%, #FFA07A 100%);
+}
+
+.customer-card .card-button {
+  background: linear-gradient(135deg, #2B66F6 0%, #4A80F7 100%);
+}
+
+.customer-card:hover .card-button {
+  background: linear-gradient(135deg, #4A80F7 0%, #6B9BF8 100%);
+}
+
+.signup-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-text {
+  font-size: 15px;
+  color: #636E72;
+}
+
+.login-link {
+  color: #2B66F6;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .signup-title {
+    font-size: 28px;
+  }
+
+  .signup-description {
+    font-size: 16px;
+  }
+
+  .user-type-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .card-icon svg {
+    width: 68px;
+    height: 68px;
+  }
+
+  .card-title {
+    font-size: 32px;
+  }
+}
