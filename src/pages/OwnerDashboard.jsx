@@ -9,69 +9,41 @@ function OwnerDashboard() {
   const dashboardCards = [
     {
       id: 'reservations',
-      title: '오늘 예약',
-      icon: '📅',
-      mainNumber: '12',
-      unit: '건',
-      description: '확인 대기 2건',
-      color: '#FF6B35',
+      title: '예약 현황',
+      icon: '📋',
+      description: '오늘/내일 예약 고객 리스트',
+      color: '#27AE60',
       route: '/owner/reservations'
     },
     {
       id: 'menu',
-      title: '메뉴 관리',
+      title: '메뉴 등록',
       icon: '🍽️',
-      mainNumber: '24',
-      unit: '개',
-      description: '등록된 메뉴',
-      color: '#4ECDC4',
+      description: '메뉴 추가/수정',
+      color: '#27AE60',
       route: '/owner/menu'
     },
     {
-      id: 'reviews',
-      title: '새 리뷰',
-      icon: '⭐',
-      mainNumber: '5',
-      unit: '개',
-      description: '답변 대기 중',
-      color: '#FFD93D',
-      route: '/owner/reviews'
-    },
-    {
-      id: 'sales',
-      title: '오늘 매출',
-      icon: '💰',
-      mainNumber: '850,000',
-      unit: '원',
-      description: '전일 대비 +12%',
-      color: '#6BCF7F',
-      route: '/owner/sales'
+      id: 'noshow',
+      title: '노쇼 관리',
+      icon: '🪑',
+      description: '테이블 배치도 설정',
+      color: '#27AE60',
+      route: '/owner/noshow'
     },
     {
       id: 'store',
-      title: '상점 관리',
-      icon: '🏪',
-      mainNumber: '',
-      unit: '',
-      description: '영업시간, 휴무일 설정',
-      color: '#A28EED',
+      title: '영업시간 관리',
+      icon: '🕐',
+      description: '영업시간 설정',
+      color: '#27AE60',
       route: '/owner/store'
-    },
-    {
-      id: 'settings',
-      title: '약속 지킴 보너스',
-      icon: '💝',
-      mainNumber: '',
-      unit: '',
-      description: '계정 및 알림 설정',
-      color: '#95A5A6',
-      route: '/owner/settings'
     }
   ];
 
   const handleCardClick = (route) => {
     console.log(`Navigating to: ${route}`);
-    if (route === '/owner/menu' || route === '/owner/reservations') {
+    if (route === '/owner/menu' || route === '/owner/reservations' || route === '/owner/noshow') {
       navigate(route);
     }
     // 다른 페이지는 추후 생성 후 활성화
@@ -100,9 +72,7 @@ function OwnerDashboard() {
         <div className="dashboard-container">
           {/* 인사말 */}
           <div className="greeting-section">
-            <p className="greeting-hello">안녕하세요, {ownerName}님! 👋</p>
-            <h2 className="greeting-main">오늘도 열심히 운영하시는 사장님을 응원합니다!</h2>
-            <p className="greeting-sub">노쇼 걱정 없는 건강한 예약문화를 올사람과 함께 지켜나가요</p>
+            <h2 className="greeting-main">사장님 관리 페이지</h2>
           </div>
 
           {/* 대시보드 카드 그리드 */}
@@ -114,23 +84,10 @@ function OwnerDashboard() {
                 style={{ '--card-color': card.color }}
                 onClick={() => handleCardClick(card.route)}
               >
-                <div className="card-header">
-                  <span className="card-icon">{card.icon}</span>
+                <div className="card-content">
+                  <div className="card-icon">{card.icon}</div>
                   <h3 className="card-title">{card.title}</h3>
-                </div>
-
-                <div className="card-body">
-                  {card.mainNumber && (
-                    <div className="card-number">
-                      <span className="number">{card.mainNumber}</span>
-                      <span className="unit">{card.unit}</span>
-                    </div>
-                  )}
                   <p className="card-description">{card.description}</p>
-                </div>
-
-                <div className="card-footer">
-                  <span className="card-link">자세히 보기 →</span>
                 </div>
               </div>
             ))}

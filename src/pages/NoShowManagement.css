@@ -1,0 +1,648 @@
+.noshow-management {
+  min-height: 100vh;
+  background: #F5F5F5;
+}
+
+/* 상단바 */
+.noshow-header {
+  background: white;
+  padding: 20px 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-button {
+  background: #27AE60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: #2ECC71;
+  transform: translateX(-3px);
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2D3436;
+  margin: 0;
+}
+
+/* 메인 컨텐츠 */
+.noshow-main {
+  padding: 40px;
+}
+
+.noshow-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 통계 섹션 */
+.stats-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2D3436;
+  margin: 0 0 24px 0;
+}
+
+.section-description {
+  font-size: 15px;
+  color: #636E72;
+  margin: 8px 0 24px 0;
+  line-height: 1.6;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card.highlight {
+  background: linear-gradient(135deg, #27AE60 0%, #2ECC71 100%);
+}
+
+.stat-card.highlight .stat-number,
+.stat-card.highlight .stat-label {
+  color: white;
+}
+
+.stat-icon {
+  font-size: 40px;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 800;
+  color: #27AE60;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #636E72;
+  font-weight: 600;
+}
+
+/* 탭 네비게이션 */
+.tab-navigation {
+  display: flex;
+  gap: 12px;
+  margin: 40px 0 32px 0;
+  border-bottom: 2px solid #E9ECEF;
+  padding-bottom: 0;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #636E72;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tab-button:hover {
+  color: #27AE60;
+}
+
+.tab-button.active {
+  color: #27AE60;
+  border-bottom-color: #27AE60;
+}
+
+/* 컨텐츠 섹션 */
+.content-section {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-header {
+  margin-bottom: 32px;
+}
+
+/* 의심 패턴 카드 */
+.suspicious-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.suspicious-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.suspicious-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.customer-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2D3436;
+  margin: 0;
+}
+
+.customer-phone {
+  font-size: 14px;
+  color: #636E72;
+  font-weight: 500;
+}
+
+.risk-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* 위험도 점수 */
+.risk-score-section {
+  margin-bottom: 24px;
+}
+
+.score-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #636E72;
+  margin-bottom: 8px;
+}
+
+.score-bar-container {
+  width: 100%;
+  height: 12px;
+  background: #E9ECEF;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.score-bar {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 6px;
+}
+
+.score-value {
+  font-size: 13px;
+  color: #636E72;
+  font-weight: 600;
+}
+
+/* 패턴 섹션 */
+.patterns-section {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #FFF9E6;
+  border-radius: 12px;
+  border-left: 4px solid #FBC02D;
+}
+
+.patterns-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D3436;
+  margin-bottom: 12px;
+}
+
+.patterns-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pattern-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #2D3436;
+}
+
+.pattern-icon {
+  font-size: 16px;
+}
+
+/* 카드 푸터 */
+.card-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #E9ECEF;
+}
+
+.footer-info {
+  display: flex;
+  gap: 20px;
+}
+
+.info-item {
+  font-size: 13px;
+  color: #636E72;
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: #D32F2F;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #B71C1C;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #E9ECEF;
+  color: #2D3436;
+}
+
+.btn-secondary:hover {
+  background: #DFE6E9;
+}
+
+/* 블랙리스트 그리드 */
+.blacklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.blacklist-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #D32F2F;
+  transition: all 0.3s ease;
+}
+
+.blacklist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.blacklist-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.blacklist-icon {
+  font-size: 36px;
+}
+
+.blacklist-info {
+  flex: 1;
+}
+
+.blacklist-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2D3436;
+  margin: 0 0 4px 0;
+}
+
+.blacklist-phone {
+  font-size: 13px;
+  color: #636E72;
+  font-weight: 500;
+}
+
+.blacklist-reason {
+  font-size: 14px;
+  color: #2D3436;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #FFEBEE;
+  border-radius: 8px;
+}
+
+.blacklist-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #F5F5F5;
+  border-radius: 8px;
+}
+
+.blacklist-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.blacklist-stat .stat-label {
+  font-size: 12px;
+  color: #636E72;
+}
+
+.blacklist-stat .stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #D32F2F;
+}
+
+.blacklist-date {
+  font-size: 12px;
+  color: #636E72;
+}
+
+/* 블랙리스트 안내 박스 */
+.blacklist-info-box {
+  background: linear-gradient(135deg, #27AE60 0%, #2ECC71 100%);
+  border-radius: 16px;
+  padding: 32px;
+  color: white;
+}
+
+.blacklist-info-box h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.blacklist-info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blacklist-info-box li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.blacklist-info-box li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* 패턴 분석 그리드 */
+.pattern-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.analysis-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.analysis-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.analysis-card.highlight-card {
+  background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  color: white;
+}
+
+.analysis-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2D3436;
+  margin: 0 0 20px 0;
+}
+
+.analysis-card.highlight-card .analysis-title,
+.analysis-card.highlight-card .learning-label,
+.analysis-card.highlight-card .performance-label {
+  color: white;
+}
+
+.analysis-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.analysis-list li {
+  padding: 10px 0;
+  padding-left: 24px;
+  position: relative;
+  border-bottom: 1px solid #E9ECEF;
+  font-size: 14px;
+  color: #2D3436;
+}
+
+.analysis-list li:last-child {
+  border-bottom: none;
+}
+
+.analysis-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #27AE60;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* 학습 통계 */
+.learning-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.learning-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #F5F5F5;
+  border-radius: 8px;
+}
+
+.learning-label {
+  font-size: 14px;
+  color: #636E72;
+  font-weight: 600;
+}
+
+.learning-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #27AE60;
+}
+
+/* 성능 그리드 */
+.performance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.performance-item {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+.performance-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.performance-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .noshow-main {
+    padding: 24px 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-navigation {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab-button {
+    padding: 12px 20px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .card-header-row,
+  .card-footer-row {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .action-buttons {
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    flex: 1;
+  }
+
+  .blacklist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pattern-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-grid {
+    grid-template-columns: 1fr;
+  }
+}
